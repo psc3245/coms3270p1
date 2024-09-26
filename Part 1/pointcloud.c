@@ -1,5 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "pointcloud.h"
+#include "util.h"
+
+int main(int argc, char* argv[]) {
+
+	if (argc != 2) {
+		return 1;
+	}
+
+	FILE *fptr = fopen(argv[1], "r");
+
+	if (fptr == NULL) {
+		return 1;
+	}
+
+	stat1(fptr);
+	
+	fclose(fptr);
+	
+	return 0;
+}
+
 
 void stat1(FILE* fptr) {
 
@@ -60,21 +82,5 @@ void stat1(FILE* fptr) {
 
 }
 
-int main(int argc, char* argv[]) {
 
-	if (argc != 2) {
-		return 1;
-	}
 
-	FILE *fptr = fopen(argv[1], "r");
-
-	if (fptr == NULL) {
-		return 1;
-	}
-
-	stat1(fptr);
-	
-	fclose(fptr);
-	
-	return 0;
-}

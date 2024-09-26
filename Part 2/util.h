@@ -1,4 +1,5 @@
-#pragma once
+#ifndef UTIL_H
+#define UTIL_H
 
 #define INDEX(row, col, total_cols) (row * total_cols + col)
 
@@ -25,3 +26,5 @@ typedef struct {
 int listInit(List* l, int max_elmt_size);
 void listAddEnd(List* l, void* elmt);
 void *listGet(List* l, int index);
+
+#endif

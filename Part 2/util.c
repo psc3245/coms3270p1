@@ -3,71 +3,44 @@
 #include <string.h>
 #include "util.h"
 
-int main() {
-	// Verify that allocateArray works
-	
-	//double *a;
-	// a = (double*) allocateArray(5, 5);
+// int main() {
 
-	// for (int i = 0; i < 5; i ++) {
-	// 	for (int j = 0; j < 5; j++) {
-	// 		*(a + INDEX(i, j, 5)) = i + j;
-	// 	}
-	// }
-	// for (int i = 0; i < 5; i ++) {
-	// 	for (int j = 0; j < 5; j++) {
-	// 		printf("%f, ", *(a + INDEX(i, j, 5)));
-	// 	}
-	// 	printf("\n");
-	// }
+// 	// Create a list to test our functions with
+// 	List* l = (List*) malloc(sizeof(List));
+// 	listInit(l, sizeof(int));
 
-	// Success, allocate array works
+// 	// Using this list, let's add a couple ints to make sure we can
+// 	int size = 25;
+// 	for (int i = 0; i < size; i++) {
+// 		listAddEnd(l, &i);
+// 	}
 
+// 	// Print the values
+// 	for (int i = 0; i < size; i++) {
+// 		printf("%d, ", *(int*)listGet(l, i));
+// 	}
 
-	// Testing list init function
-	// List* l;
-	// listInit(l, sizeof(int));
-	// printf("Max Size: %d, Max Element Size: %d, Data pointer: %p, Size: %d \n",
-	// 	l-> max_size, l-> max_element_size, &(l-> data), l-> size);
-
-	// Success, the list gets initialized
-
-	List* l = (List*) malloc(sizeof(List));
-	listInit(l, sizeof(int));
-
-	// Using this list, let's add a couple ints to make sure we can
-	int size = 25;
-	for (int i = 0; i < size; i++) {
-		listAddEnd(l, &i);
-	}
-
-	// Print the values
-	for (int i = 0; i < size; i++) {
-		printf("%d, ", *(int*)listGet(l, i));
-	}
-
-	
-
-	free(l -> data);
-	free(l);
-}
+// 	// Free l and data
+// 	free(l -> data);
+// 	free(l);
+// }
 
 int listInit(List* l, int max_elmt_size) {
+	// Make sure l exists
+	if (l == NULL) return -1; 
 
-	if (l == NULL) return -1; // failure
-
+	// Set values, including default max_size 10
 	l -> max_size = 10;
 	l -> max_element_size = max_elmt_size;
 	l -> size = 0;
 
+	// Allocate memory for data
 	l -> data = malloc(l -> max_size * l -> max_element_size);
 
-	if (l -> data == NULL) {
-		printf("Memory allocation failed");
-		exit(1);
-	}
+	// Check for memory allocation failure
+	if (l -> data == NULL) return -1;
 
-	// success
+	// Success
 	return 0;
 }
 
