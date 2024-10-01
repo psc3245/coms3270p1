@@ -3,21 +3,11 @@
 #include "pointcloud.h"
 #include "util.h"
 
-int main(int argc, char* argv[]) {
+int main() {
 
-	if (argc != 2) {
-		return 1;
-	}
-
-	FILE *fptr = fopen(argv[1], "r");
-
-	if (fptr == NULL) {
-		return 1;
-	}
+	FILE *fptr = stdin;
 
 	stat1(fptr);
-	
-	fclose(fptr);
 	
 	return 0;
 }
