@@ -3,28 +3,6 @@
 #include <string.h>
 #include "util.h"
 
-// int main() {
-
-// 	// Create a list to test our functions with
-// 	List* l = (List*) malloc(sizeof(List));
-// 	listInit(l, sizeof(int));
-
-// 	// Using this list, let's add a couple ints to make sure we can
-// 	int size = 25;
-// 	for (int i = 0; i < size; i++) {
-// 		listAddEnd(l, &i);
-// 	}
-
-// 	// Print the values
-// 	for (int i = 0; i < size; i++) {
-// 		printf("%d, ", *(int*)listGet(l, i));
-// 	}
-
-// 	// Free l and data
-// 	free(l -> data);
-// 	free(l);
-// }
-
 int listInit(List* l, int max_elmt_size) {
 	// Make sure l exists
 	if (l == NULL) return -1; 

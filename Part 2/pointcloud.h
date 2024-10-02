@@ -19,4 +19,6 @@ typedef struct Point {
 
 void readPointCloudData(FILE *stream, int *rasterWidth, List *pc);
 
+void imagePointCloud(List *l, int width, char *filename);
+
 #endif
